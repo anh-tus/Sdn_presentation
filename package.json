@@ -1,0 +1,17 @@
+{
+  "name": "sdn302-room-chat-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo chat theo phòng cho bài thuyết trình Real-time Communication",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

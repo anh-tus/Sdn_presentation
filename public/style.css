@@ -1,0 +1,31 @@
+:root { font-family: Arial, sans-serif; color: #202638; background: #f3f5f8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app { max-width: 780px; min-height: 100vh; margin: auto; padding: 28px 20px; }
+.eyebrow { color: #586580; font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+h1 { margin: 6px 0; font-size: clamp(28px, 5vw, 40px); }
+.intro { margin: 0 0 24px; line-height: 1.5; color: #556177; }
+.setup, .chat { background: white; border: 1px solid #dce2ec; border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+#join-form, #message-form { display: flex; align-items: end; gap: 10px; }
+#join-form label { flex: 1; font-size: 13px; font-weight: 700; }
+input, select, button { font: inherit; border-radius: 7px; padding: 10px 12px; }
+input, select { display: block; width: 100%; margin-top: 5px; border: 1px solid #b8c3d5; background: white; }
+button { border: 0; background: #2459d3; color: white; font-weight: 700; cursor: pointer; white-space: nowrap; }
+button:hover { background: #1948b4; }
+button:disabled { background: #9eabc2; cursor: not-allowed; }
+.status-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 17px; font-size: 13px; }
+.status { font-weight: 700; }
+.connected { color: #16804b; }
+.disconnected { color: #b35231; }
+.notice { margin: 9px 0 0; color: #586580; font-size: 13px; }
+.chat-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 1px solid #e3e7ef; }
+h2 { margin: 0 0 12px; font-size: 18px; }
+.chat-heading span, footer { color: #647087; font-size: 12px; }
+#messages { height: 290px; overflow-y: auto; list-style: none; margin: 0 0 12px; padding: 10px 0; }
+#messages li { padding: 8px 0; border-bottom: 1px solid #eef0f5; }
+.message-meta { font-size: 12px; font-weight: 700; color: #4462a5; }
+#messages p { margin: 5px 0 0; overflow-wrap: anywhere; line-height: 1.4; }
+#message-form input { flex: 1; margin: 0; }
+footer { text-align: center; line-height: 1.4; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 560px) { #join-form { display: grid; } .app { padding: 16px 10px; } .setup, .chat { padding: 14px; } }

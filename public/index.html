@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo chat theo phòng</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">SDN302 · REAL-TIME COMMUNICATION</p>
+      <h1>Chat theo phòng</h1>
+      <p class="intro">Ba cửa sổ, hai phòng. Gửi tin và quan sát ai nhận được ngay mà không tải lại trang.</p>
+    </header>
+
+    <section class="setup" aria-label="Vào phòng chat">
+      <form id="join-form">
+        <label>Tên của bạn<input id="name" name="name" maxlength="24" placeholder="Ví dụ: Tú" required></label>
+        <label>Phòng<select id="room" name="room"><option value="SE">SE</option><option value="Other">Other</option></select></label>
+        <button type="submit">Vào phòng</button>
+      </form>
+      <div class="status-line">
+        <span id="status" class="status disconnected" role="status">Chưa kết nối</span>
+        <span id="transport">Transport: —</span>
+      </div>
+      <p id="notice" class="notice" aria-live="polite">Nhập tên và chọn phòng để bắt đầu.</p>
+    </section>
+
+    <section class="chat" aria-label="Tin nhắn">
+      <div class="chat-heading"><h2 id="room-title">Chưa vào phòng</h2><span>Không lưu lịch sử</span></div>
+      <ol id="messages" aria-live="polite"></ol>
+      <form id="message-form">
+        <label class="sr-only" for="message">Tin nhắn</label>
+        <input id="message" maxlength="300" placeholder="Nhập tin nhắn..." disabled required>
+        <button id="send" type="submit" disabled>Gửi</button>
+      </form>
+    </section>
+    <footer>Client → server kiểm tra → phát tin đến đúng room → các client cập nhật giao diện.</footer>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
